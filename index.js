@@ -2,14 +2,13 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 
-// https://www.googleapis.com/auth/gmail.readonly
-
 // If modifying these scopes, delete token.json.
+// https://www.googleapis.com/auth/gmail.readonly
 const SCOPES = ['https://mail.google.com/'];
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = 'token.json';
+const TOKEN_PATH = path.join(process.cwd(), 'mailStreamerKey.json');
 
 // Load client secrets from a local file.
 fs.readFile('credentials.json', (err, content) => {
